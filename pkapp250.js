@@ -1,4 +1,10 @@
 // PK2.50.js
+var MyPkNumber = 2;
+var OpenURLPortNum = 3000;
+var MqttUrl = 'leadilsv05vy.mlkcca.com';
+var MqttDataStoreR = 'control';
+var MqttDataStoreS = 'pk';
+
 
 // Functions =============================================================
 function IsMyNumber(OrderString, MyNumber) {
@@ -37,11 +43,6 @@ function SaveSetting( filename, value ) {
     }
 }
 
-var MyPkNumber = 2;
-var OpenURLPortNum = 3000;
-var MqttUrl = 'leadilsv05vy.mlkcca.com';
-var MqttDataStoreR = 'control';
-var MqttDataStoreS = 'pk';
 
 // Serial port ==========================================================
 var SerialPort = require("serialport").SerialPort;

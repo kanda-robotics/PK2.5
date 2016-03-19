@@ -3,7 +3,7 @@
 // Functions =============================================================
 function IsMyNumber(OrderString, MyNumber) {
     try {
-        var FirstTwoHex = parseInt( OrderString.substr(0,2), 16 );
+        var FirstTwoHex = parseInt( OrderString.vale.cmd.substr(0,2), 16 );
         if ( ( FirstTwoHex & ( 1 << ( MyNumber - 1 ) ) ) != 0 ) {
             return true;
         } else {
@@ -37,16 +37,11 @@ function SaveSetting( filename, value ) {
     }
 }
 
-var MyPkNumber = parseInt( LoadSetting('pknum',1) );
-var OpenURLPortNum = parseInt( LoadSetting('urlportnum',3000), 10);
-var MqttUrl = String(LoadSetting('mqtturl','noteihfhy2wn.mlkcca.com'));
-var MqttDataStoreR = String(LoadSetting('mqttdatastorer','control'));
-var MqttDataStoreS = String(LoadSetting('mqttdatastores','pk'));
-console.log('PK:' + MyPkNumber);
-console.log('OpenURLPort:' + OpenURLPortNum);
-console.log('MQTT URL:' + MqttUrl);
-console.log('MQTT DataStoreR:' + MqttDataStoreR);
-console.log('MQTT DataStoreS:' + MqttDataStoreS);
+var MyPkNumber = 2;
+var OpenURLPortNum = 3000;
+var MqttUrl = 'leadilsv05vy.mlkcca.com';
+var MqttDataStoreR = 'control';
+var MqttDataStoreS = 'pk';
 
 // Serial port ==========================================================
 var SerialPort = require("serialport").SerialPort;

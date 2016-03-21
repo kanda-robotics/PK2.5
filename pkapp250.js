@@ -1,9 +1,9 @@
 // PK2.50.js
-var MyPkNumber = 2;
-var OpenURLPortNum = 3000;
-var MqttUrl = 'leadilsv05vy.mlkcca.com';
-var MqttDataStoreR = 'control';
-var MqttDataStoreS = 'pk';
+var MyPkNumber = parseInt( LoadSetting('pknum',1) );
+var OpenURLPortNum = parseInt( LoadSetting('urlportnum',3000), 10);
+var MqttUrl = LoadSetting('mqtturl','noteihfhy2wn.mlkcca.com');
+var MqttDataStoreR = LoadSetting('mqttdatastorer','control');
+var MqttDataStoreS = LoadSetting('mqttdatastores','pk');
 
 
 // Functions =============================================================
@@ -25,8 +25,8 @@ function IsMyNumber(OrderString, MyNumber) {
 var fs = require("fs");
 function LoadSetting( filename, errorvalue ) {
     try {
-        var filetext = fs.readFileSync('./pksetting/' + filename );
-        return filetext;
+        var filetext = fs.readFileSync('./pksetting/' + filename , 'utf-8');
+        return filetext.trim();
     } catch (e) {
         return errorvalue;
     }

@@ -9,7 +9,7 @@ var MqttDataStoreS = 'pk';
 // Functions =============================================================
 function IsMyNumber(OrderString, MyNumber) {
     try {
-        var FirstTwoHex = parseInt( OrderString.value.cmd.substr(0,2), 16 );
+        var FirstTwoHex = parseInt( OrderString.vale.cmd.substr(0,2), 16 );
         if ( ( FirstTwoHex & ( 1 << ( MyNumber - 1 ) ) ) != 0 ) {
             return true;
         } else {
